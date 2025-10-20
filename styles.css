@@ -1,0 +1,30 @@
+:root{
+  --accent:#186fa6;
+  --accent-2:#ff7a2d;
+  --hud-bg: rgba(255,255,255,0.9);
+  --text:#073044;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:radial-gradient(circle at 20% 10%, #f7fff7 0%, #cdeffd 40%, #d7e9ff 100%);}
+.menu-page{height:100vh;display:flex;align-items:center;justify-content:center}
+.menu-container{background:rgba(255,255,255,0.95);padding:36px;border-radius:18px;box-shadow:0 18px 50px rgba(8,24,48,0.12);text-align:center}
+.title{font-size:34px;color:var(--text);margin-bottom:6px}
+.subtitle{color:#274e60;margin-bottom:18px}
+.menu-buttons{display:flex;flex-direction:column;gap:12px;align-items:center}
+.btn{display:inline-block;padding:12px 28px;border-radius:12px;color:white;text-decoration:none;font-weight:700;min-width:240px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,0.12);transition:transform .16s,box-shadow .16s}
+.btn.moving{background:var(--accent)}
+.btn.standard{background:var(--accent-2)}
+.btn:hover{transform:translateY(-6px);box-shadow:0 18px 34px rgba(0,0,0,0.18)}
+
+/* game page styles */
+body.game-page{overflow:hidden}
+canvas#game{position:fixed;left:0;top:0;width:100vw;height:100vh;display:block;cursor:crosshair}
+.hud{position:fixed;left:18px;top:18px;background:var(--hud-bg);padding:10px 14px;border-radius:10px;box-shadow:0 8px 24px rgba(6,18,34,0.12);color:var(--text);font-weight:600}
+.back-btn{position:fixed;right:18px;top:18px;background:var(--hud-bg);padding:8px 12px;border-radius:8px;text-decoration:none;color:var(--text);box-shadow:0 8px 24px rgba(6,18,34,0.12)}
+/* hit messages for fallback (if needed) */
+.hit-float{position:fixed;pointer-events:none;font-weight:800}
+@media (max-width:800px){
+  .menu-container{padding:24px}
+  .title{font-size:26px}
+}
+
